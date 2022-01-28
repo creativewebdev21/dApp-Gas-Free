@@ -1,115 +1,105 @@
 let config = {};
 config.contract = {
-    address: "0x96899058E70b6DE8D847Ff93c71C087D11EbD749",
-    abi: [
+  address: "0x5c3bfe7853c212aa0bca14933554ad2bf74885c9",
+  abi: [
+    {
+      anonymous: false,
+      inputs: [
         {
-            "constant": false,
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "userAddress",
-                    "type": "address"
-                },
-                {
-                    "internalType": "string",
-                    "name": "newQuote",
-                    "type": "string"
-                },
-                {
-                    "internalType": "bytes32",
-                    "name": "r",
-                    "type": "bytes32"
-                },
-                {
-                    "internalType": "bytes32",
-                    "name": "s",
-                    "type": "bytes32"
-                },
-                {
-                    "internalType": "uint8",
-                    "name": "v",
-                    "type": "uint8"
-                }
-            ],
-            "name": "setQuoteMeta",
-            "outputs": [],
-            "payable": false,
-            "stateMutability": "nonpayable",
-            "type": "function"
+          indexed: false,
+          internalType: "uint256",
+          name: "value",
+          type: "uint256",
         },
+      ],
+      name: "ValueChanged",
+      type: "event",
+    },
+    {
+      inputs: [
         {
-            "constant": true,
-            "inputs": [],
-            "name": "getQuote",
-            "outputs": [
-                {
-                    "internalType": "string",
-                    "name": "currentQuote",
-                    "type": "string"
-                },
-                {
-                    "internalType": "address",
-                    "name": "currentOwner",
-                    "type": "address"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
+          internalType: "address",
+          name: "forwarder",
+          type: "address",
         },
+      ],
+      name: "isTrustedForwarder",
+      outputs: [
         {
-            "constant": true,
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "",
-                    "type": "address"
-                }
-            ],
-            "name": "nonces",
-            "outputs": [
-                {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
+          internalType: "bool",
+          name: "",
+          type: "bool",
         },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "retrieve",
+      outputs: [
         {
-            "constant": true,
-            "inputs": [],
-            "name": "owner",
-            "outputs": [
-                {
-                    "internalType": "address",
-                    "name": "",
-                    "type": "address"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
+          internalType: "uint256",
+          name: "",
+          type: "uint256",
         },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
         {
-            "constant": true,
-            "inputs": [],
-            "name": "quote",
-            "outputs": [
-                {
-                    "internalType": "string",
-                    "name": "",
-                    "type": "string"
-                }
-            ],
-            "payable": false,
-            "stateMutability": "view",
-            "type": "function"
-        }
-    ]
-}
+          internalType: "address",
+          name: "_trustedForwarder",
+          type: "address",
+        },
+      ],
+      name: "setTrustedForwarder",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        {
+          internalType: "uint256",
+          name: "value",
+          type: "uint256",
+        },
+      ],
+      name: "store",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "trustedForwarder",
+      outputs: [
+        {
+          internalType: "address",
+          name: "",
+          type: "address",
+        },
+      ],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "versionRecipient",
+      outputs: [
+        {
+          internalType: "string",
+          name: "",
+          type: "string",
+        },
+      ],
+      stateMutability: "pure",
+      type: "function",
+    },
+  ],
+};
 
-
-module.exports = { config }
+module.exports = { config };
